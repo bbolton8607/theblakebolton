@@ -1,0 +1,85 @@
+/************************************* IMPORTING FONTS *******************************************/
+
+@font-face {
+  font-family: "Painting With Chocolate";
+  src: url("../fonts/LeviReBrushed.ttf") format("truetype");
+}
+
+/************************************* BASE *******************************************/
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* Now 10px = 1rem! */
+  overflow-x: hidden;
+  width: 100%;
+  scroll-behavior: smooth; /* For page link */
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: $mainFont;
+  font-size: 1.6rem;
+  line-height: 2;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  @include atMedium {
+    max-width: 140rem; /** 1400px **/
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+::selection {
+  background-color: #ff4242;
+  color: white;
+}
+
+/************************************* HEADINGS *******************************************/
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $mainFont;
+  margin: 0 !important;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  text-transform: capitalize;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+h3 {
+  font-size: 3.6rem;
+}
+
+h4,
+h5 {
+  font-weight: bold;
+}

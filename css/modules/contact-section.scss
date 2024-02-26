@@ -1,0 +1,149 @@
+.contact {
+  background-color: #fff;
+
+  & h1 {
+    padding: 6rem 0;
+    font-size: 5rem;
+    font-weight: 400;
+
+    @include atSmall {
+      padding: 8rem 0 3rem;
+      font-size: 7rem;
+    }
+  }
+
+  &-wrapper {
+    @include atMedium {
+      max-width: 1150px;
+      margin: 0 auto;
+    }
+  }
+
+  &-form {
+    padding: 0 3rem;
+
+    @include atMedium {
+      padding: 0 20rem;
+    }
+  }
+
+  &-text-fields {
+    display: grid;
+    grid-template-areas:
+      "name"
+      "email"
+      "phone"
+      "message";
+    grid-gap: 2rem 2rem;
+    padding: 5vh 0;
+
+    @include atMedium {
+      display: grid;
+      grid-template-areas:
+        "name message"
+        "email message"
+        "phone message";
+      grid-gap: 3rem 3rem;
+    }
+
+    & .text-input {
+      background-color: rgb(245, 245, 245);
+      border-radius: 3px;
+      padding: 10px 10px;
+      border: 1px solid transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    & .name-input {
+      grid-area: name;
+    }
+
+    & .email-input {
+      grid-area: email;
+    }
+
+    & .phone-input {
+      grid-area: phone;
+    }
+
+    & .message-input {
+      grid-area: message;
+      height: 20rem;
+    }
+  }
+
+  &-btn {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0 6rem 0;
+  }
+
+  &-info {
+    padding-bottom: 5rem;
+
+    @include atSmall {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      padding-bottom: 7rem;
+    }
+
+    & div:nth-child(1) {
+      grid-column: 2 / 3;
+    }
+
+    & div:nth-child(2) {
+      grid-column: 3 / 4;
+    }
+
+    & div:nth-child(3) {
+      grid-column: 4 / 5;
+    }
+
+    &-card {
+      padding-bottom: 5rem;
+      display: grid;
+
+      @include atSmall {
+        grid-gap: 1.5rem;
+      }
+
+      & svg {
+        margin: auto;
+        font-size: 45px;
+        color: $primary;
+        padding-bottom: 1rem;
+      }
+
+      & h5 {
+        padding-top: 2rem;
+        font-weight: 400;
+      }
+
+      & h5,
+      & p {
+        margin: auto;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.success-message {
+  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 40%;
+  padding: 10px;
+  color: #155724;
+  border-color: #c3e6cb;
+  background-color: #d4edda;
+  z-index: 100;
+
+  &-btn {
+    border: none;
+    background: transparent;
+    font-weight: bold;
+  }
+}

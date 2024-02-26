@@ -1,0 +1,481 @@
+.diagonal-wavy {
+  --s: 125px; /* control the size */
+  --c1: #181818;
+  --c2: #470303;
+  box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.5);
+  --_g: var(--c2) 6% 14%, var(--c1) 16% 24%, var(--c2) 26% 34%,
+    var(--c1) 36% 44%, var(--c2) 46% 54%, var(--c1) 56% 64%, var(--c2) 66% 74%,
+    var(--c1) 76% 84%, var(--c2) 86% 94%;
+  background: radial-gradient(
+      100% 100% at 100% 0,
+      var(--c1) 4%,
+      var(--_g),
+      #0008 96%,
+      #0000
+    ),
+    radial-gradient(
+        100% 100% at 0 100%,
+        #0000,
+        #0008 4%,
+        var(--_g),
+        var(--c1) 96%
+      )
+      var(--c1);
+  background-size: var(--s) var(--s);
+}
+
+.rotated-square {
+  --s: 80px; /* control the size */
+  --c: #0c0c0c;
+  position: relative;
+  --_g: #0000 calc(-650% / 13) calc(50% / 13), var(--c) 0 calc(100% / 13),
+    #0000 0 calc(150% / 13), var(--c) 0 calc(200% / 13), #0000 0 calc(250% / 13),
+    var(--c) 0 calc(300% / 13);
+  --_g0: repeating-linear-gradient(45deg, var(--_g));
+  --_g1: repeating-linear-gradient(-45deg, var(--_g));
+  background: var(--_g0), var(--_g0) var(--s) var(--s), var(--_g1),
+    var(--_g1) var(--s) var(--s) #250101;
+  background-size: calc(2 * var(--s)) calc(2 * var(--s));
+}
+
+.hypnotic {
+  --r: 25px; /* control the size */
+  --c1: #181818 /*color 1*/ 99%, #0000 101%;
+  --c2: #470303 /*color 2*/ 99%, #0000 101%;
+
+  --s: calc(var(--r) * 0.866); /* .866 = cos(30deg) */
+  --g0: radial-gradient(var(--r), var(--c1));
+  --g1: radial-gradient(var(--r), var(--c2));
+  --f: radial-gradient(var(--r) at calc(100% + var(--s)) 50%, var(--c1));
+  --p: radial-gradient(var(--r) at 100% 50%, var(--c2));
+  background: var(--f) 0 calc(-5 * var(--r) / 2),
+    var(--f) calc(-2 * var(--s)) calc(var(--r) / 2),
+    var(--p) 0 calc(-2 * var(--r)), var(--g0) var(--s) calc(-5 * var(--r) / 2),
+    var(--g1) var(--s) calc(5 * var(--r) / 2),
+    radial-gradient(var(--r) at 100% 100%, var(--c1)) 0 calc(-1 * var(--r)),
+    radial-gradient(var(--r) at 0% 50%, var(--c1)) 0 calc(-4 * var(--r)),
+    var(--g1) calc(-1 * var(--s)) calc(-7 * var(--r) / 2),
+    var(--g0) calc(-1 * var(--s)) calc(-5 * var(--r) / 2),
+    var(--p) calc(-2 * var(--s)) var(--r),
+    var(--g0) calc(-1 * var(--s)) calc(var(--r) / 2),
+    var(--g1) calc(-1 * var(--s)) calc(var(--r) / -2),
+    var(--g0) 0 calc(-1 * var(--r)), var(--g1) var(--s) calc(var(--r) / -2),
+    var(--g0) var(--s) calc(var(--r) / 2) #470303; /*color 2 again here (yes I got lazy defining a variable ) */
+  background-size: calc(4 * var(--s)) calc(6 * var(--r));
+}
+
+.mastadon {
+  --s: 50px;
+  --c: #1a1a1a;
+  --_s: calc(2 * var(--s)) calc(2 * var(--s));
+  --_g: 35.36% 35.36% at;
+  --_c: #0000 66%, #141414 68% 70%, #0000 72%;
+
+  background: radial-gradient(var(--_g) 100% 25%, var(--_c)) var(--s) var(--s) /
+      var(--_s),
+    radial-gradient(var(--_g) 0 75%, var(--_c)) var(--s) var(--s) / var(--_s),
+    radial-gradient(var(--_g) 100% 25%, var(--_c)) 0 0 / var(--_s),
+    radial-gradient(var(--_g) 0 75%, var(--_c)) 0 0 / var(--_s),
+    repeating-conic-gradient(var(--c) 0 25%, #0000 0 50%) 0 0 / var(--_s),
+    radial-gradient(var(--_c)) 0 calc(var(--s) / 2) / var(--s) var(--s) var(--c);
+  background-attachment: fixed;
+}
+
+$color-1: #202020;
+$color-1-t: transparentize($color-1, 1);
+$color-2: #830505;
+$color-2-t: transparentize($color-2, 1);
+$color-3: #470303;
+$color-3-t: transparentize($color-3, 1);
+$color-4: #830505;
+$color-4-t: transparentize($color-4, 1);
+$color-5: #181818;
+$color-5-t: transparentize($color-5, 1);
+
+$fig-1-color: $color-2;
+$fig-1-color-t: $color-2-t;
+
+$fig-2-color: $color-4;
+$fig-2-color-t: $color-4-t;
+
+$size: 5em;
+$size-half: calc($size/2);
+$size-third: calc($size/3);
+$size-halfthird: $size-third * 2.5;
+$square: 7%;
+$small-square: 4%;
+$xsmall-square: 2%;
+
+.css-bg {
+  background: linear-gradient(
+        to right top,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      )
+      0 $size-halfthird,
+    linear-gradient(
+        to left top,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      )
+      0 $size-halfthird,
+    linear-gradient(
+        to right bottom,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      )
+      0 $size-halfthird,
+    linear-gradient(
+        to left bottom,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      )
+      0 $size-halfthird,
+    linear-gradient(
+        to right top,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      )
+      0 -#{$size-halfthird},
+    linear-gradient(
+        to left top,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      )
+      0 -#{$size-halfthird},
+    linear-gradient(
+        to right bottom,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      )
+      0 -#{$size-halfthird},
+    linear-gradient(
+        to left bottom,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      )
+      0 -#{$size-halfthird},
+    linear-gradient(
+        to right top,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      ) -#{$size-halfthird} 0,
+    linear-gradient(
+        to left top,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      ) -#{$size-halfthird} 0,
+    linear-gradient(
+        to right bottom,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      ) -#{$size-halfthird} 0,
+    linear-gradient(
+        to left bottom,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      ) -#{$size-halfthird} 0,
+    linear-gradient(
+        to right top,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      )
+      $size-halfthird 0,
+    linear-gradient(
+        to left top,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      )
+      $size-halfthird 0,
+    linear-gradient(
+        to right bottom,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      )
+      $size-halfthird 0,
+    linear-gradient(
+        to left bottom,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      )
+      $size-halfthird 0,
+    /*---------------*/
+      linear-gradient(
+        to right top,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      )
+      $size-half $size-third,
+    linear-gradient(
+        to left top,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      )
+      $size-half $size-third,
+    linear-gradient(
+        to right bottom,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      )
+      $size-half $size-third,
+    linear-gradient(
+        to left bottom,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      )
+      $size-half $size-third,
+    linear-gradient(
+        to right top,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      )
+      $size-half $size-third * 2,
+    linear-gradient(
+        to left top,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      )
+      $size-half $size-third * 2,
+    linear-gradient(
+        to right bottom,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      )
+      $size-half $size-third * 2,
+    linear-gradient(
+        to left bottom,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      )
+      $size-half $size-third * 2,
+    linear-gradient(
+        to right top,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      )
+      $size-third $size-half,
+    linear-gradient(
+        to left top,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      )
+      $size-third $size-half,
+    linear-gradient(
+        to right bottom,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      )
+      $size-third $size-half,
+    linear-gradient(
+        to left bottom,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      )
+      $size-third $size-half,
+    linear-gradient(
+        to right top,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      )
+      $size-third * 2 $size-half,
+    linear-gradient(
+        to left top,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      )
+      $size-third * 2 $size-half,
+    linear-gradient(
+        to right bottom,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      )
+      $size-third * 2 $size-half,
+    linear-gradient(
+        to left bottom,
+        $fig-1-color $xsmall-square,
+        $fig-1-color-t $xsmall-square
+      )
+      $size-third * 2 $size-half,
+    linear-gradient(
+        to right top,
+        $color-4 $xsmall-square,
+        $color-4-t $xsmall-square
+      )
+      $size-half 0,
+    linear-gradient(
+        to left top,
+        $color-4 $xsmall-square,
+        $color-4-t $xsmall-square
+      )
+      $size-half 0,
+    linear-gradient(
+        to right bottom,
+        $color-4 $xsmall-square,
+        $color-4-t $xsmall-square
+      )
+      $size-half 0,
+    linear-gradient(
+        to left bottom,
+        $color-4 $xsmall-square,
+        $color-4-t $xsmall-square
+      )
+      $size-half 0,
+    linear-gradient(
+        to right top,
+        $color-4 $xsmall-square,
+        $color-4-t $xsmall-square
+      )
+      0 $size-half,
+    linear-gradient(
+        to left top,
+        $color-4 $xsmall-square,
+        $color-4-t $xsmall-square
+      )
+      0 $size-half,
+    linear-gradient(
+        to right bottom,
+        $color-4 $xsmall-square,
+        $color-4-t $xsmall-square
+      )
+      0 $size-half,
+    linear-gradient(
+        to left bottom,
+        $color-4 $xsmall-square,
+        $color-5-t $xsmall-square
+      )
+      0 $size-half,
+    radial-gradient(
+        circle,
+        $color-1-t 52%,
+        $color-1 54%,
+        $color-1 55.5%,
+        $color-1-t 55.5%,
+        $color-1-t 65%,
+        $color-1 66%,
+        $color-1 69%,
+        $color-1-t 75%
+      )
+      0 0,
+    radial-gradient(
+        circle,
+        $color-1-t 52%,
+        $color-1 54%,
+        $color-1 55.5%,
+        $color-1-t 55.5%,
+        $color-1-t 65%,
+        $color-1 66%,
+        $color-1 69%,
+        $color-1-t 75%
+      )
+      calc($size/2) calc($size/2),
+    linear-gradient(
+        to right top,
+        $color-2 $xsmall-square,
+        $color-2-t $xsmall-square
+      )
+      0 0,
+    linear-gradient(
+        to left top,
+        $color-2 $xsmall-square,
+        $color-2-t $xsmall-square
+      )
+      0 0,
+    linear-gradient(
+        to right bottom,
+        $color-2 $xsmall-square,
+        $color-2-t $xsmall-square
+      )
+      0 0,
+    linear-gradient(
+        to left bottom,
+        $color-2 $xsmall-square,
+        $color-2-t $xsmall-square
+      )
+      0 0,
+    linear-gradient(
+        to right top,
+        $color-2 $xsmall-square,
+        $color-2-t $xsmall-square
+      )
+      $size-half $size-half,
+    linear-gradient(
+        to left top,
+        $color-2 $xsmall-square,
+        $color-2-t $xsmall-square
+      )
+      $size-half $size-half,
+    linear-gradient(
+        to right bottom,
+        $color-2 $xsmall-square,
+        $color-2-t $xsmall-square
+      )
+      $size-half $size-half,
+    linear-gradient(
+        to left bottom,
+        $color-2 $xsmall-square,
+        $color-2-t $xsmall-square
+      )
+      $size-half $size-half,
+    linear-gradient(
+        to right top,
+        $color-4 $small-square,
+        $color-4-t $small-square
+      )
+      0 0,
+    linear-gradient(
+        to left top,
+        $color-4 $small-square,
+        $color-4-t $small-square
+      )
+      0 0,
+    linear-gradient(
+        to right bottom,
+        $color-4 $small-square,
+        $color-4-t $small-square
+      )
+      0 0,
+    linear-gradient(
+        to left bottom,
+        $color-4 $small-square,
+        $color-4-t $small-square
+      )
+      0 0,
+    linear-gradient(
+        to right top,
+        $color-4 $small-square,
+        $color-4-t $small-square
+      )
+      $size-half $size-half,
+    linear-gradient(
+        to left top,
+        $color-4 $small-square,
+        $color-4-t $small-square
+      )
+      $size-half $size-half,
+    linear-gradient(
+        to right bottom,
+        $color-4 $small-square,
+        $color-4-t $small-square
+      )
+      $size-half $size-half,
+    linear-gradient(
+        to left bottom,
+        $color-4 $small-square,
+        $color-4-t $small-square
+      )
+      $size-half $size-half,
+    linear-gradient(to right top, $color-3 $square, $color-3-t $square) 0 0,
+    linear-gradient(to left top, $color-3 $square, $color-3-t $square) 0 0,
+    linear-gradient(to right bottom, $color-3 $square, $color-3-t $square) 0 0,
+    linear-gradient(to left bottom, $color-3 $square, $color-3-t $square) 0 0,
+    linear-gradient(to right top, $color-3 $square, $color-3-t $square)
+      $size-half $size-half,
+    linear-gradient(to left top, $color-3 $square, $color-3-t $square)
+      $size-half $size-half,
+    linear-gradient(to right bottom, $color-3 $square, $color-3-t $square)
+      $size-half $size-half,
+    linear-gradient(to left bottom, $color-3 $square, $color-3-t $square)
+      $size-half $size-half;
+  background-size: $size $size;
+  background-color: $color-5;
+}

@@ -1,0 +1,26 @@
+.footer {
+  text-align: center;
+  justify-content: space-between;
+  padding: 3vh 10vw;
+  align-items: center;
+
+  @include atSmall {
+    display: flex;
+    direction: rtl;
+  }
+
+  &-social-icon {
+    font-size: 40px;
+    color: gray;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: #6e5494;
+    }
+  }
+
+  &-copyright {
+    margin: 0;
+    color: gray;
+  }
+}

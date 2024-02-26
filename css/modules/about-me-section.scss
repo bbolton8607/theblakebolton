@@ -1,0 +1,166 @@
+.about {
+  @include atMedium {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  /****************************** HEADERS *************************/
+
+  &-header {
+    padding: 5rem 0;
+
+    & h2 {
+      font-size: 4rem;
+    }
+  }
+
+  /********************************** SKILLS SECTION *************************/
+
+  &-skills {
+    background-color: #ffffff;
+    padding: 3rem 3rem;
+
+    @include atMedium {
+      grid-column: 1 / 6;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      padding-bottom: 10rem;
+    }
+
+    &-grid {
+      grid-column: 1 / 6;
+
+      @include atMedium {
+        grid-column: 1 / 6;
+      }
+
+      @include atXLarge {
+        grid-column: 3 / 6;
+      }
+
+      &-bar {
+        padding-bottom: 3rem;
+      }
+    }
+
+    &-bar-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1.5rem;
+
+      & .value {
+        color: rgb(90, 90, 90);
+        font-size: 14px;
+      }
+    }
+
+    &-de-progress-bar {
+      display: block;
+      background: rgba(1, 1, 1, 0.1);
+      height: 4px;
+      border-radius: 10px;
+
+      & .about-skills-progress-bar {
+        background: linear-gradient(to right, #ff4242 0%, #63d5ef 100%);
+      }
+    }
+
+    &-progress-bar {
+      height: 100%;
+      border-radius: 10px;
+    }
+  }
+
+  /*********************************** ABOUT ME SECTION ************************/
+
+  &-me {
+    background-color: rgb(212, 212, 212);
+    padding: 3rem 2rem 10rem;
+
+    @include atMedium {
+      grid-column: 6 / 13;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    &-grid {
+      grid-column: 1 / 4;
+      grid-gap: 2rem;
+    }
+
+    &-btn {
+      padding-top: 4rem;
+    }
+  }
+}
+
+//*************************************** SKILL BARS
+.skill-container .skill {
+  /* Your skill bar styling */
+  color: white;
+  background-color: lightgray;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 10px;
+  white-space: nowrap;
+  position: relative;
+  z-index: 0;
+}
+
+.skill-container .skill::before {
+  /* Animation using keyframes */
+  content: "";
+  position: absolute;
+  background: linear-gradient(to right, $darkGray 0%, #ff4242 100%);
+  border-radius: inherit;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  animation: animateLeft 1s ease-out;
+}
+
+@keyframes animateLeft {
+  from {
+    transform: translateX(-100%);
+  }
+}
+
+/* Adjust the width for different skill levels */
+.skill-level-70::before {
+  width: 70%;
+}
+
+.skill-level-75::before {
+  width: 75%;
+}
+
+.skill-level-80::before {
+  width: 80%;
+}
+
+.skill-level-85::before {
+  width: 85%;
+}
+
+.skill-level-90::before {
+  width: 90%;
+}
+
+.skill-level-95::before {
+  width: 95%;
+}
+
+.progress-container {
+  width: 100%;
+  height: 4px;
+  background-color: lightgray;
+  border-radius: 10px;
+}
+.progress-bar {
+  height: 100%;
+  background-color: #4caf50;
+  width: 0; /* Starts empty */
+  transition: width 0.5s ease; /* Smooth transition */
+}

@@ -1,0 +1,85 @@
+.cursor div {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  animation: fadein 1s;
+  z-index: 100;
+}
+
+.cursor .dot {
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: $primary;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.5s;
+  transition: width 0.8s, height 0.8s;
+}
+
+.cursor .circle {
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid $primary;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s;
+  transition: width 0.2s, height 0.2s;
+}
+
+div.cursor div span {
+  position: absolute;
+  top: -0.5em;
+  left: 0.6em;
+  width: 300px;
+  font-size: 30pt;
+  font-weight: 600;
+  color: $primary;
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: 100;
+}
+
+div.cursor div .visible {
+  opacity: 1;
+}
+
+.cursor .hide {
+  opacity: 0;
+}
+
+.cursor .dot-hover {
+  background-color: $black;
+  width: 0.6rem;
+  height: 0.6rem;
+  opacity: 0.8;
+}
+
+.cursor .expand {
+  width: 6rem;
+  height: 6rem;
+}
+
+.cursor .shrink {
+  width: 2rem;
+  height: 2rem;
+}
+
+.cursor .fill {
+  border: 2px solid $primary;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

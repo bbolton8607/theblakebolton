@@ -1,0 +1,74 @@
+.exp-edu {
+  padding: 10rem 3rem;
+
+  &-grid {
+    @include atMedium {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-gap: 7rem;
+    }
+  }
+
+  &-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  &-experiences {
+    grid-column: 1 / 7;
+    z-index: 9;
+  }
+
+  &-title {
+    padding-bottom: 3rem;
+    color: $white;
+    font-size: 3.5rem;
+
+    @include atSmaller {
+      font-size: 4.5rem;
+    }
+
+    @include atMedium {
+      padding-top: 0;
+      font-size: 5rem;
+    }
+  }
+
+  &-card {
+    padding-top: 5rem;
+    border-bottom: 1px solid #b1b1b1;
+
+    & h4 {
+      color: $white;
+      padding-top: 2rem;
+      font-size: 18px;
+    }
+
+    & p {
+      color: #b1b1b1;
+    }
+  }
+
+  &-year-box {
+    border: 2px solid $primary;
+    border-radius: 3px;
+    padding: 0 1rem;
+    color: $white;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  &-education {
+    grid-column: 7 / 13;
+    z-index: 9;
+
+    & .exp-edu-title {
+      padding-top: 10rem;
+
+      @include atMedium {
+        padding-top: 0rem;
+      }
+    }
+  }
+}

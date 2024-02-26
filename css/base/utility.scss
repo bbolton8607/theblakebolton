@@ -1,0 +1,109 @@
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: $primary;
+}
+
+.text-white {
+  color: $white;
+}
+
+.text-gray {
+  color: $lightGray;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.paint-font {
+  font-family: $paintFont;
+}
+// ~*~*~*~*~*~*~~*~ COLORS ~*~*~*~*~*~*~*~*~*~
+.black-font {
+  color: rgb(7, 7, 7) !important;
+}
+.dark-gray-font {
+  color: rgb(36, 33, 33) !important;
+}
+.white-font {
+  color: rgb(255, 255, 255) !important;
+}
+.light-white-font {
+  color: rgb(238, 238, 238) !important;
+}
+
+.light-gray-font {
+  color: rgb(227, 227, 227) !important;
+}
+.primary-red {
+  color: $primary;
+}
+
+// ~*~*~*~*~*~*~~*~ PADDING AND MARGINS ~*~*~*~*~*~*~*~*~*~
+.px-40 {
+  padding: 40px 0;
+}
+
+.pb-50 {
+  padding-bottom: 50px;
+}
+
+.pt-40 {
+  padding-top: 40px;
+}
+
+// ~*~*~*~*~*~*~~*~ HEADING GRID ~*~*~*~*~*~*~*~*~*~
+
+.title-grid {
+  display: grid;
+  grid-template: 1fr / 1fr;
+  place-items: center;
+}
+.title-grid > * {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+}
+.title-grid .title {
+  font-size: 7vw;
+  font-weight: 900;
+  text-transform: uppercase;
+  z-index: 2;
+}
+.title-grid .title-bg {
+  font-family: $paintFont;
+  z-index: 1;
+  font-size: 11vw;
+  letter-spacing: 10px;
+  line-height: 0.7;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-top: 18px;
+}
+
+@include atSmall {
+  .title-grid .title {
+    font-size: 54px;
+  }
+
+  .title-grid .title-bg {
+    font-size: 110px;
+    margin-top: 35px;
+  }
+}
+
+// ~*~*~*~*~*~*~~*~ A LINK ~*~*~*~*~*~*~*~*~*~
+.a-blk {
+  color: black;
+  text-align: center;
+}

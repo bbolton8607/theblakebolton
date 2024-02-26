@@ -1,0 +1,71 @@
+.services {
+  padding: 7vh 10vw 15vh;
+  background-image: linear-gradient(rgb(70, 70, 70), rgb(19, 19, 19));
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  @include atSmall {
+    padding-top: 10vh;
+  }
+
+  & h1 {
+    padding-bottom: 7vh;
+    font-size: 4rem;
+
+    @include atSmall {
+      font-size: 6rem;
+    }
+  }
+
+  &-bg {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &-card-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8vh 0;
+    margin: 0 1vw;
+    border-radius: 3%;
+    transition: 0.3s ease-in-out;
+    height: 30rem;
+
+    &:hover {
+      background: linear-gradient(45deg, $primary 0%, black 100%);
+
+      & .card-icon {
+        color: $white;
+      }
+    }
+  }
+
+  &-card-content {
+    display: grid;
+
+    & .card-icon {
+      margin: 0 auto;
+      font-size: 50px;
+      color: $primary;
+      transition: 0.3s ease-in-out;
+    }
+
+    & h3 {
+      margin: auto;
+      text-align: center;
+      padding: 3rem 0 1rem;
+      color: $white;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    & p {
+      margin: auto;
+      text-align: center;
+      color: $white;
+      padding: 0 10px;
+    }
+  }
+}
